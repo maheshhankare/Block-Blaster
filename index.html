@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#5b2bd6">
+  <meta name="description" content="BLOCK BLASTER: an offline block puzzle with adventure levels, mini games, relaxing toys and kids' quizzes.">
+  <title>BLOCK BLASTER</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/blocks.css">
+  <link rel="stylesheet" href="css/quiz.css">
+  <link rel="stylesheet" href="css/minigames.css">
+  <link rel="stylesheet" href="css/relax.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <button class="btn-icon js-home" aria-label="Home">🏠</button>
+      <h1 class="logo" aria-label="Block Blaster"><span>B</span><span>L</span><span>O</span><span>C</span><span>K</span>&nbsp;<span>B</span><span>L</span><span>A</span><span>S</span><span>T</span><span>E</span><span>R</span></h1>
+      <button class="profile-chip js-profile" aria-label="Player profile"></button>
+      <button class="btn-icon js-settings" aria-label="Settings">⚙️</button>
+    </header>
+    <nav class="modebar" role="tablist" aria-label="Game modes">
+      <button class="mode-tab" role="tab" data-mode="classic" style="--tab:#ff4d6d"><span class="tab-icon">🧱</span><span class="tab-label">Classic Blaster</span></button>
+      <button class="mode-tab" role="tab" data-mode="adventure" style="--tab:#ff9f1c"><span class="tab-icon">🗺️</span><span class="tab-label">Adventure</span></button>
+      <button class="mode-tab" role="tab" data-mode="minigames" style="--tab:#2ec4b6"><span class="tab-icon">🎮</span><span class="tab-label">Mini Games</span></button>
+      <button class="mode-tab" role="tab" data-mode="relax" style="--tab:#8338ec"><span class="tab-icon">🌈</span><span class="tab-label">Relaxing Games</span></button>
+      <button class="mode-tab" role="tab" data-mode="quiz" style="--tab:#3a86ff"><span class="tab-icon">🧠</span><span class="tab-label">Quizzes</span></button>
+    </nav>
+    <main id="views">
+      <section class="view" id="view-home" data-view="home"></section>
+      <section class="view" id="view-classic" data-view="classic" hidden></section>
+      <section class="view" id="view-adventure" data-view="adventure" hidden></section>
+      <section class="view" id="view-minigames" data-view="minigames" hidden></section>
+      <section class="view" id="view-relax" data-view="relax" hidden></section>
+      <section class="view" id="view-quiz" data-view="quiz" hidden></section>
+    </main>
+  </div>
+  <div id="modal-root"></div>
+  <noscript><p style="padding:2em">BLOCK BLASTER needs JavaScript to run.</p></noscript>
+
+  <!-- Core -->
+  <script src="js/core.js"></script>
+  <script src="js/audio.js"></script>
+  <!-- Data (kept separate from game logic) -->
+  <script src="data/avatars.js"></script>
+  <script src="data/shapes.js"></script>
+  <script src="data/adventure-config.js"></script>
+  <script src="data/questions.js"></script>
+  <!-- Engines and modes -->
+  <script src="js/block-engine.js"></script>
+  <script src="js/modes/classic.js"></script>
+  <script src="js/modes/adventure.js"></script>
+  <script src="js/collection.js"></script>
+  <script src="js/minigames/tictactoe.js"></script>
+  <script src="js/minigames/arrows.js"></script>
+  <script src="js/minigames/cube.js"></script>
+  <script src="js/minigames/trampoline.js"></script>
+  <script src="js/relax/window-clean.js"></script>
+  <script src="js/relax/popit.js"></script>
+  <script src="js/relax/dumpling.js"></script>
+  <script src="js/relax/neon.js"></script>
+  <script src="js/relax/slime.js"></script>
+  <script src="js/relax/sand.js"></script>
+  <script src="js/relax/bubbles.js"></script>
+  <script src="js/relax/colorsort.js"></script>
+  <script src="js/relax/toys.js"></script>
+  <script src="js/quiz-engine.js"></script>
+  <script src="js/modes/quiz.js"></script>
+  <!-- Shell: navigation, home, settings -->
+  <script src="js/app.js"></script>
+</body>
+</html>
